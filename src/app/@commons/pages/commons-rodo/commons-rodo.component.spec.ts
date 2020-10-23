@@ -8,9 +8,9 @@ describe('CommonsRodoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CommonsRodoComponent ]
+      declarations: [CommonsRodoComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
