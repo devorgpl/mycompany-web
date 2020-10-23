@@ -8,9 +8,9 @@ describe('PanelConvertComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PanelConvertComponent ]
+      declarations: [PanelConvertComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
