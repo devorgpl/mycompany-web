@@ -1,9 +1,10 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NgModule} from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
-import {AppComponent} from './app.component';
-import {AppRoutingModule} from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { McCommonsModule } from './@commons/mc-commons.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,6 +13,7 @@ import {AppRoutingModule} from './app-routing.module';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    McCommonsModule,
     // NbSidebarModule.forRoot(),
     // NbMenuModule.forRoot(),
     // NbDatepickerModule.forRoot(),
