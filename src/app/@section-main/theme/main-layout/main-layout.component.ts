@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <nb-layout windowMode>
       <nb-layout-header fixed>
-        <mc-main-header style="width: 100%;"></mc-main-header>
+        <mc-main-header></mc-main-header>
       </nb-layout-header>
 
       <nb-layout-column>
