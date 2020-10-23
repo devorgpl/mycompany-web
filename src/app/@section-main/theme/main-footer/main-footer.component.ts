@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
     <span class="created-by">
       Created by <b><a href="https://dev.org.pl/" target="_blank">dev.org.pl</a></b> 2020
     </span>
+    <span class="regulations"><a routerLink="/main/regulations">Regulations</a></span>
+    <span class="policy"><a routerLink="/main/policy">Policy</a></span>
     <div class="socials">
       <a href="https://github.com/devorgpl/" target="_blank" class="ion ion-social-github"></a>
     </div>
