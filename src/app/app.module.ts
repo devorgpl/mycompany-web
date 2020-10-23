@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { McCommonsModule } from './@commons/mc-commons.module';
+import { ThemeModule } from './@theme/theme.module';
+import { CoreModule } from './@core/core.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,8 +22,8 @@ import { McCommonsModule } from './@commons/mc-commons.module';
     // NbDialogModule.forRoot(),
     // NbWindowModule.forRoot(),
     // NbToastrModule.forRoot(),
-    // CoreModule.forRoot(),
-    // ThemeModule.forRoot(),
+    CoreModule.forRoot(),
+    ThemeModule.forRoot(),
   ],
   bootstrap: [AppComponent],
 })

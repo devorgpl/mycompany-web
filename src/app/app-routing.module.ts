@@ -7,7 +7,6 @@ export const routes: Routes = [
     loadChildren: () => import('./@section-main/section-main.module')
       .then(m => m.SectionMainModule),
   },
-  {path: 'test', redirectTo: 'main', pathMatch: 'full'},
   {path: '', redirectTo: 'main', pathMatch: 'full'},
   {path: '**', redirectTo: 'main'},
 ];
