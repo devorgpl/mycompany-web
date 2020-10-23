@@ -1,0 +1,1 @@
+<span>Photo by <a href="https://unsplash.com/@clintadair?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Clint Adair</a> on <a href="https://unsplash.com/collections/2244433/bitcoin-arts-?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
