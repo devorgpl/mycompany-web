@@ -21,7 +21,6 @@ jobs:
         node-version: 14.x
     - run: npm install
     - run: npm run build
-    - run: npm test
     - name: Build image
       run: docker build dist/. -file Dockerfile --tag $IMAGE_NAME
     - name: Log into GitHub Container Registry
