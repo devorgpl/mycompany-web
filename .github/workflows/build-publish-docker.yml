@@ -1,0 +1,45 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: My company docker
+
+on:
+  push:
+    branches: [ master ]
+env:
+  IMAGE_NAME: mycompany-web
+  PROJECT_FOLDER: dist
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    - run: npm install
+    - run: npm run build
+    - run: npm test
+    - name: Build image
+      run: docker build dist/. -file Dockerfile --tag $IMAGE_NAME
+    - name: Log into GitHub Container Registry
+      # TODO: Create a PAT with `read:packages` and `write:packages` scopes and save it as an Actions secret `CR_PAT`
+      run: echo "${{ secrets.DOCKER_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
+
+    - name: Push image to GitHub Container Registry
+      run: |
+          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
+          # Change all uppercase to lowercase
+          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
+          # Strip git ref prefix from version
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+          # Strip "v" prefix from tag name
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+          # Use Docker `latest` tag convention
+          [ "$VERSION" == "master" ] && VERSION=latest
+          echo IMAGE_ID=$IMAGE_ID
+          echo VERSION=$VERSION
+          docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
+          docker push $IMAGE_ID:$VERSION
