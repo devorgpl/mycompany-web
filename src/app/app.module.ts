@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { McCommonsModule } from './@commons/mc-commons.module';
 import { ThemeModule } from './@theme/theme.module';
 import { CoreModule } from './@core/core.module';
+import { NbMenuModule, NbSidebarModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,8 +17,8 @@ import { CoreModule } from './@core/core.module';
     HttpClientModule,
     AppRoutingModule,
     McCommonsModule,
-    // NbSidebarModule.forRoot(),
-    // NbMenuModule.forRoot(),
+    NbSidebarModule.forRoot(),
+    NbMenuModule.forRoot(),
     // NbDatepickerModule.forRoot(),
     // NbDialogModule.forRoot(),
     // NbWindowModule.forRoot(),
