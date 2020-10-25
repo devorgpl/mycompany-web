@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +18,8 @@ import {
 import { COMPANY_URL } from './@commons/services/company.service';
 import { environment } from '../environments/environment';
 import { CONVERT_URL } from './@commons/services/convert.service';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { initializeKeycloak } from './kcauth/guard/app-initializer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +27,7 @@ import { CONVERT_URL } from './@commons/services/convert.service';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    KeycloakAngularModule,
     AppRoutingModule,
     McCommonsModule,
     NbSidebarModule.forRoot(),
@@ -37,6 +40,12 @@ import { CONVERT_URL } from './@commons/services/convert.service';
     ThemeModule.forRoot(),
   ],
   providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      multi: true,
+      deps: [KeycloakService],
+    },
     {
       provide: COMPANY_URL,
       useValue: environment.companyServiceBaseUrl,
