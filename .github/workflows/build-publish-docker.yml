@@ -5,7 +5,7 @@ name: My company docker
 
 on:
   push:
-    branches: [ master ]
+    branches: [ release ]
 env:
   IMAGE_NAME: mycompany-web
   PROJECT_FOLDER: dist
