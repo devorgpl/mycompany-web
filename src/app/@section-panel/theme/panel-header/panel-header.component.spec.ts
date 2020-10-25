@@ -8,9 +8,9 @@ describe('PanelHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PanelHeaderComponent ]
+      declarations: [PanelHeaderComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
