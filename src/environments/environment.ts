@@ -5,4 +5,6 @@
 
 export const environment = {
   production: false,
+  companyServiceBaseUrl: '/companies/api',
+  convertServiceBaseUrl: '/converts/api',
 };
