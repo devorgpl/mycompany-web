@@ -9,6 +9,8 @@ import { PanelFooterComponent } from './theme/panel-footer/panel-footer.componen
 import { PanelHeaderComponent } from './theme/panel-header/panel-header.component';
 import { PanelLayoutComponent } from './theme/panel-layout/panel-layout.component';
 import { NbActionsModule, NbIconModule, NbLayoutModule, NbMenuModule, NbSidebarModule } from '@nebular/theme';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { Ng2CompleterModule } from '@akveo/ng2-completer';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { NbActionsModule, NbIconModule, NbLayoutModule, NbMenuModule, NbSidebarM
     NbSidebarModule,
     NbActionsModule,
     NbIconModule,
+    Ng2CompleterModule.forRoot(),
+    Ng2SmartTableModule,
   ],
 })
 export class SectionPanelModule {

@@ -1,1 +1,7 @@
-<p>panel-company works!</p>
+<p>Your companies:</p>
+<ng2-smart-table [settings]="settings"
+                 [source]="source"
+                 (deleteConfirm)="onDeleteConfirm($event)"
+                 (editConfirm)="onEditConfirm($event)"
+                 (createConfirm)="onCreateConfirm($event)">
+</ng2-smart-table>
