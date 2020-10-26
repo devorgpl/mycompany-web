@@ -6,7 +6,7 @@
 import { KeycloakConfig } from 'keycloak-js';
 
 const keycloakConfig: KeycloakConfig = {
-  url: '/auth/',
+  url: 'http://localhost:9090/auth/',
   realm: 'my-company',
   clientId: 'website-client',
 };

@@ -20,6 +20,7 @@ import { environment } from '../environments/environment';
 import { CONVERT_URL } from './@commons/services/convert.service';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { initializeKeycloak } from './kcauth/guard/app-initializer';
+import { AppAuthGuard } from './kcauth/guard/kc-auth.guard';
 
 @NgModule({
   declarations: [AppComponent],
@@ -40,6 +41,7 @@ import { initializeKeycloak } from './kcauth/guard/app-initializer';
     ThemeModule.forRoot(),
   ],
   providers: [
+    AppAuthGuard,
     {
       provide: APP_INITIALIZER,
       useFactory: initializeKeycloak,

@@ -1,5 +1,6 @@
 import {ExtraOptions, RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
+import { AppAuthGuard } from './kcauth/guard/kc-auth.guard';
 
 export const routes: Routes = [
   {
@@ -9,6 +10,8 @@ export const routes: Routes = [
   },
   {
     path: 'panel',
+    canActivate: [AppAuthGuard],
+    data: {roles: ['website-access']},
     loadChildren: () => import('./@section-panel/section-panel.module')
       .then(m => m.SectionPanelModule),
   },
