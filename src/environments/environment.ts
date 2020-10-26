@@ -14,6 +14,6 @@ const keycloakConfig: KeycloakConfig = {
 export const environment = {
   production: false,
   keycloak: keycloakConfig,
-  companyServiceBaseUrl: '/companies/api',
-  convertServiceBaseUrl: '/converts/api',
+  companyServiceBaseUrl: 'http://localhost:5001/api',
+  convertServiceBaseUrl: 'http://localhost:5002/api',
 };
