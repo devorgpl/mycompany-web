@@ -1,4 +1,5 @@
 import { NbMenuItem } from '@nebular/theme';
+import { environment } from '../../../environments/environment';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
@@ -16,5 +17,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'Companies',
     icon: 'home-outline',
     link: '/panel/company',
+  },
+  {
+    title: 'Account',
+    icon: 'person-outline',
+    url: environment.keycloak.url + 'realms/' + environment.keycloak.realm + '/account/',
   },
 ];
