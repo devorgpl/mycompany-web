@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { User } from '../../../@commons/model/user';
 
 @Component({
   selector: 'mc-panel-header',
@@ -8,6 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class PanelHeaderComponent implements OnInit {
 
   constructor() {
+  }
+
+  _user: User;
+
+  @Input()
+  set user(user: User) {
+    this._user = user;
   }
 
   ngOnInit(): void {

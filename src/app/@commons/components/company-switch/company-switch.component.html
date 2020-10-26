@@ -1,0 +1,14 @@
+<div *ngIf="_userId !== null">
+  <span>Company: </span>
+  <nb-select *ngIf="companies?.length > 1"
+             [selected]="selectedCompany?.id"
+             status="primary"
+             (selectedChange)="selectedChange($event)">
+    <nb-option *ngFor="let company of companies"
+               [value]="company.id"> {{ company.name }}</nb-option>
+  </nb-select>
+  <span *ngIf="companies?.length === 1">{{ companies[0].name }}</span>
+  <span *ngIf="companies && companies?.length === 0"><a routerLink="/panel/company"
+                                                       href="#">Create a acompany</a> </span>
+
+</div>

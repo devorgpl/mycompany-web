@@ -11,6 +11,7 @@ import { PanelLayoutComponent } from './theme/panel-layout/panel-layout.componen
 import { NbActionsModule, NbIconModule, NbLayoutModule, NbMenuModule, NbSidebarModule } from '@nebular/theme';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { Ng2CompleterModule } from '@akveo/ng2-completer';
+import { McCommonsModule } from '../@commons/mc-commons.module';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { Ng2CompleterModule } from '@akveo/ng2-completer';
     NbIconModule,
     Ng2CompleterModule.forRoot(),
     Ng2SmartTableModule,
+    McCommonsModule,
   ],
 })
 export class SectionPanelModule {
