@@ -10,17 +10,19 @@ import { PanelHeaderComponent } from './theme/panel-header/panel-header.componen
 import { PanelLayoutComponent } from './theme/panel-layout/panel-layout.component';
 import {
   NbAccordionModule,
-  NbActionsModule, NbButtonModule,
+  NbActionsModule,
+  NbButtonModule,
   NbCardModule,
   NbIconModule,
-  NbLayoutModule, NbListModule,
+  NbLayoutModule,
+  NbListModule,
   NbMenuModule,
   NbSidebarModule,
 } from '@nebular/theme';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { Ng2CompleterModule } from '@akveo/ng2-completer';
 import { McCommonsModule } from '../@commons/mc-commons.module';
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
