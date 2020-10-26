@@ -21,6 +21,7 @@ import { CONVERT_URL } from './@commons/services/convert.service';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { initializeKeycloak } from './kcauth/guard/app-initializer';
 import { AppAuthGuard } from './kcauth/guard/kc-auth.guard';
+import { AuthService } from './kcauth/services/auth.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,11 +43,12 @@ import { AppAuthGuard } from './kcauth/guard/kc-auth.guard';
   ],
   providers: [
     AppAuthGuard,
+    AuthService,
     {
       provide: APP_INITIALIZER,
       useFactory: initializeKeycloak,
       multi: true,
-      deps: [KeycloakService],
+      deps: [KeycloakService, AuthService],
     },
     {
       provide: COMPANY_URL,
