@@ -40,8 +40,8 @@ export class PanelConvertComponent implements OnInit {
     ).subscribe(result => {
       if (result.selCompany && result.user) {
         this._user = result.user;
-        this.updateCompanies();
         this.company = result.selCompany;
+        this.updateCompanies();
       }
     });
   }

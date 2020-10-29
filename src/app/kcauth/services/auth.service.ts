@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
 import { KeycloakEventType, KeycloakService } from 'keycloak-angular';
 import { User } from '../../@commons/model/user';
-import { Observable, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private user$: ReplaySubject<User> = new ReplaySubject<User>(1);
+  private user$: Subject<User> = new BehaviorSubject<User>(null);
 
   constructor(private keycloakService: KeycloakService) {
   }
 
-  init() {
-    this.bindKeycloakEvents();
-  }
-
   get userObservable$(): Observable<User> {
     return this.user$.asObservable().pipe(filter(user => !(user === null || user === undefined)));
+  }
+
+  init() {
+    this.bindKeycloakEvents();
   }
 
   public bindKeycloakEvents(): void {
